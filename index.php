@@ -34,6 +34,9 @@ require 'config.php';
                         <li class="list-group-item">
                             <a class="btn btn-danger" href="logout.php">Logout</a>
                         </li>
+                        <li class="list-group-item">
+                            <a class="btn btn-info" href="https://anatoliyz.playground.verysimplejournal.com/login.php">Cambia utente</a>
+                        </li>
                     </ul>
                 </div>
             </div>

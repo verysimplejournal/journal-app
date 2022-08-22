@@ -57,6 +57,7 @@ class Utente {
         }
     }
 
+
     public function login($username, $password) {
         // $isRegistered = false;
         // $content = file("registered-users.txt");

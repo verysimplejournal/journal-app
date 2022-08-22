@@ -44,7 +44,7 @@ if (isset($_SESSION['islogged']) && $_SESSION['islogged'] === true) {
                         <input class="form-control" type="password" name="password"><br>
                         <div class="col-12 text-center">
                             <button class="btn btn-primary" type="submit">Login</button>
-                            <a class="btn btn-info" href="https://anatoliyz.playground.verysimplejournal.com/">Sign Up</a>
+                            <a class="btn btn-info" href="https://anatoliyz.playground.verysimplejournal.com">Sign Up</a>
                         </div>
                     </form>
                 </div>
