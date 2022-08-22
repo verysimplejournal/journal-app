@@ -23,8 +23,9 @@ class Utente {
             // set the PDO error mode to exception
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $sql = "insert into users (firstname, lastname, email, password)
-            values ('".$dati['name']."','".$dati['surname']."','".$dati['username']."',".$dati['password'].")";
+            values ('".$dati['name']."','".$dati['surname']."','".$dati['username']."','".$dati['password']."')";
             $conn->exec($sql);
+            header('Location: https://anatoliyz.playground.verysimplejournal.com/login.php');
           } catch(PDOException $e) {
             echo "Connection failed: " . $e->getMessage();
             exit;
