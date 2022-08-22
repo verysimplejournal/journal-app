@@ -9,6 +9,10 @@ registraUtente($_POST);
 
 echo 'Successo! <a href="https://anatoliyz.playground.verysimplejournal.com">Torna indietro</a>';
 */
+ini_set('display_errors', 1); 
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 require_once 'Utente.php';
 $utente = new Utente();
 $utente->registrazione($_POST);

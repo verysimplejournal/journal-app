@@ -39,8 +39,33 @@ class Utente {
         }
     }
 
-    protected function verificaUsername($username)
-    {
+    protected function verificaUsername($username){
+
+    $config = require dirname(__FILE__) . '/config/database.php';
+
+    try {
+    
+        $conn = new PDO(
+          'mysql:host=' . $config['host'] . ';dbname=' . $config['database'],
+          $config['user'],
+          $config['password']
+          );
+        // set the PDO error mode to exception
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $stmt = $conn->prepare("SELECT id FROM users WHERE email = '".$username."'");
+        $stmt->execute();
+        if ($stmt->rowCount()) {
+          exit;
+        } 
+      } catch(PDOException $e) 
+      {
+        echo "Connection failed: " . $e->getMessage();
+        exit;
+  
+      }
+    }
+    
+ /*   {
         $isRegistered = false;
         $content = file("registered-users.txt");
         
@@ -51,12 +76,12 @@ class Utente {
             }
         }
         
-        if ($isRegistered == true) {
+       if ($isRegistered == true) {
             echo 'Errore username presente! <a href="https://anatoliyz.playground.verysimplejournal.com">Torna indietro</a>';
             exit;
         }
     }
-
+*/
 
     public function login($username, $password) {
         // $isRegistered = false;
