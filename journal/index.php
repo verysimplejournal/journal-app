@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+require dirname(__DIR__) . '/config.php';
 $config = require dirname(__DIR__) . '/config/database.php';
 
 try {
@@ -31,7 +31,7 @@ try {
 </head>
 
 <body>
-
+  <?php require dirname(__DIR__) . '/menu-nav.php'; ?>
   <div class="container mt-4">
     <?php
     if ($_GET['success'] == 'true') {

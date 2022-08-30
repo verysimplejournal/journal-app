@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+require dirname(__DIR__) . '/config.php';
 $config = require dirname(__DIR__) . '/config/database.php';
 
 try {
@@ -30,7 +30,7 @@ try {
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-
+<?php require dirname(__DIR__) . '/menu-nav.php'; ?>
 <div class="container mt-3">
     <?php
     if ($_GET['success'] == 'true') {
@@ -67,7 +67,7 @@ try {
       <input type="hidden" name="note_id" value="<?php echo $_GET['id']; ?>">
     </div>
     <button type="submit" class="btn btn-primary">Update</button>
-    <a class="btn btn-info" href="https://anatoliyz.playground.verysimplejournal.com/journal">Go back</a>
+    <a class="btn btn-info" href="<?php echo $_CONFIG['url']; ?>journal">Go back</a>
   </form>
       </div>
       </div>

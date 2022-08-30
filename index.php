@@ -13,7 +13,7 @@ require 'config.php';
 </head>
 
 <body>
-
+<?php require dirname(__FILE__) . '/menu-nav.php'; ?>
     <?php
     if (isset($_SESSION['islogged']) && $_SESSION['islogged'] === true) {
     ?>

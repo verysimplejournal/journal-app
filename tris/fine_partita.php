@@ -1,4 +1,9 @@
 <?php
 session_start();
-session_destroy();
-header('Location: https://anatoliyz.playground.verysimplejournal.com/tris/');
+require dirname(__DIR__) . '/config.php';
+
+unset($_SESSION['giocatore']);
+unset($_SESSION['gioco_iniziato']);
+unset($_SESSION['positioni']);
+
+header('Location: '.$_CONFIG['url'].'tris/');

@@ -10,7 +10,7 @@
 </head>
 
 <body>
-
+<?php require dirname(__DIR__) . '/menu-nav.php'; ?>
     <div class="container mt-3 p-5">
         <?php if (!$_SESSION['gioco_iniziato']) { ?>
             <div class="row m-2 py-2">
@@ -19,7 +19,7 @@
                 </div>
             </div>
             <div class="row m-2 py-2">
-                <form action="https://anatoliyz.playground.verysimplejournal.com/tris/index.php" method="post">
+                <form action="<?php echo $_CONFIG['url']; ?>tris/index.php" method="post">
                     <div class="col-12">
                         <input type="hidden" name="inizia" value="1">
                         <button class="btn btn-primary">Inizia</button>
@@ -43,7 +43,7 @@
                     echo '<div class="row m-2 py-2">';
                     foreach ($numeri as $numero) {
                         echo '<div class="col-4">
-                        <form action="https://anatoliyz.playground.verysimplejournal.com/tris/" method="post">
+                        <form action="'.$_CONFIG['url'].'tris/" method="post">
                             <div class="d-grid">
     
                                 <input type="hidden" name="giocatore" value="'.$_SESSION['giocatore'].'">
@@ -130,7 +130,7 @@
                 </div>
             </div> -->
             <div class="row m-2 py-2">
-                <form action="https://anatoliyz.playground.verysimplejournal.com/tris/fine_partita.php" method="post">
+                <form action="<?php echo $_CONFIG['url']; ?>tris/fine_partita.php" method="post">
                     <div class="col-12">
                         <input type="hidden" name="inizia" value="1">
                         <button class="btn btn-primary">Ricomincia</button>
