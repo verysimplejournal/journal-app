@@ -5,6 +5,12 @@ class Utente {
     // public string $cognome;
     // public string $username;
     // protected string $password;
+    protected $config;
+
+    public function __construct()
+    {
+      $this->config = require dirname(__FILE__) . '/config/env.php';
+    }
 
     public function registrazione($dati)
     {
@@ -25,7 +31,7 @@ class Utente {
             $sql = "insert into users (firstname, lastname, email, password)
             values ('".$dati['name']."','".$dati['surname']."','".$dati['username']."','".$dati['password']."')";
             $conn->exec($sql);
-            header('Location: https://anatoliyz.playground.verysimplejournal.com/login.php');
+            header('Location: ' . $this->config['url'] . 'login.php');
           } catch(PDOException $e) {
             echo "Connection failed: " . $e->getMessage();
             exit;
@@ -35,7 +41,7 @@ class Utente {
     protected function verificaDati($dati)
     {
         if (empty($dati['name']) || empty($dati['surname']) || empty($dati['username']) || empty($dati['password'])) {
-            header('Location: https://anatoliyz.playground.verysimplejournal.com?error_msg=invalid');
+            header('Location: ' . $this->config['url'] . '?error_msg=invalid');
             exit;
         }
     }
@@ -116,9 +122,9 @@ class Utente {
                 $user = $stmt->fetch(PDO::FETCH_ASSOC);
                 $_SESSION['islogged'] = true;
                 $_SESSION['user_id'] = $user['id'];
-                header('Location: https://anatoliyz.playground.verysimplejournal.com');
+                header('Location: ' . $this->config['url']);
             } else {
-              header('Location: https://anatoliyz.playground.verysimplejournal.com/login.php?error_msg=invalid');
+              header('Location: ' . $this->config['url'] . 'login.php?error_msg=invalid');
             }
           } catch(PDOException $e) {
             echo "Connection failed: " . $e->getMessage();

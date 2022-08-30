@@ -37,10 +37,10 @@ echo "La registrazione è venuta con successo";
         <div class="col-8 offset-2 text-center">
                     <ul class="list-group">
                         <li class="list-group-item">
-                            <a href="https://anatoliyz.playground.verysimplejournal.com">Torni indietro</a><br>
+                            <a href="<?php echo $_CONFIG['url']; ?>">Torni indietro</a><br>
                         </li>
                         <li class="list-group-item">
-                        <a href="https://anatoliyz.playground.verysimplejournal.com/login.php">Login</a>
+                        <a href="<?php echo $_CONFIG['url']; ?>login.php">Login</a>
                         </li>
                     </ul>
         </div>

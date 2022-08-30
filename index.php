@@ -29,13 +29,13 @@ require 'config.php';
                 <div class="col-8 offset-2 text-center">
                     <ul class="list-group">
                         <li class="list-group-item">
-                            <a href="https://anatoliyz.playground.verysimplejournal.com/journal">My notes</a><br>
+                            <a href="<?php echo $_CONFIG['url']; ?>journal">My notes</a><br>
                         </li>
                         <li class="list-group-item">
                             <a class="btn btn-danger" href="logout.php">Logout</a>
                         </li>
                         <li class="list-group-item">
-                            <a class="btn btn-info" href="https://anatoliyz.playground.verysimplejournal.com/login.php">Cambia utente</a>
+                            <a class="btn btn-info" href="<?php echo $_CONFIG['url']; ?>login.php">Cambia utente</a>
                         </li>
                     </ul>
                 </div>
@@ -80,7 +80,7 @@ require 'config.php';
                         <input class="form-control" type="password" name="password"><br>
                         <div class="col-12 text-center">
                             <button class="btn btn-primary" type="submit">Sign Up</button>
-                            <a class="btn btn-info" href="https://anatoliyz.playground.verysimplejournal.com/login.php">Login</a>
+                            <a class="btn btn-info" href="<?php echo $_CONFIG['url']; ?>login.php">Login</a>
                         </div>
                     </form>
                 </div>
